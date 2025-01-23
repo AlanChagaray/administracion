@@ -7,11 +7,9 @@ import { Title } from "@/components/Title";
 import { SuccessModal } from "@/components/SuccessModal";
 import { ErrorModal } from "@/components/ErrorModal";
 
-export default function page() {
-  const formRef: any = useRef();
+const Page = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
-
   const [formData, setFormData] = useState({
     proveedor: "",
     contacto: "",
@@ -20,6 +18,7 @@ export default function page() {
     direccion: "",
     localidad: ""
   });
+  const formRef: any = useRef();
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -129,3 +128,5 @@ export default function page() {
     </>
   );
 }
+
+export default Page;

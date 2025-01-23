@@ -21,9 +21,7 @@ interface Props {
 }
 
 export const ModalEdit = ({ producto, show, onClose }: Props) => {
-  if (!show) return null;
 
-  const formRef: any = useRef([]);
   const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({
     idproducto: producto[0].idproducto || "",
@@ -35,6 +33,8 @@ export const ModalEdit = ({ producto, show, onClose }: Props) => {
     idproveedor: producto[0].idproveedor || "",
     estado: producto[0].estado || "",
   });
+  const formRef: any = useRef([]);
+  if (!show) return null;
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();

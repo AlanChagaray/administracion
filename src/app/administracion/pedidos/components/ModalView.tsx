@@ -15,14 +15,13 @@ interface Props {
 }
 
 export const ModalView = ({ pedido, show, onClose }: Props) => {
-  if (!show) return null;
 
   const [productos, setProductos] = useState<Producto[]>([]);
   const [loading, setLoading] = useState(true);
-
   const idpedido = pedido[0].idpedido;
 
   useEffect(() => {
+    
     const fetchData = async () => {
       try {
         const data : Producto[]= await vtaProductosObtener( idpedido);
@@ -32,9 +31,10 @@ export const ModalView = ({ pedido, show, onClose }: Props) => {
         console.error("Error al obtener los datos:", error);
       }
     };
-  
     fetchData();
-  }, []);
+  }, [idpedido]);
+  
+  if (!show) return null;
 
   const handleDownloadPDF = async () => {
     try {

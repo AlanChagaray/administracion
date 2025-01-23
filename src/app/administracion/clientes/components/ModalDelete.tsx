@@ -23,9 +23,9 @@ async function deleteCliente(IdCliente: number) {
 }
 
 export const ModalDelete = ({ idcliente, show, onClose }: Props) => {
-  if (!show) return null;
-
   const [message, setMessage] = useState(""); 
+
+  if (!show) return null;
 
   const IdCliente: number = idcliente;
 

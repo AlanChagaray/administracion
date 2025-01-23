@@ -16,9 +16,8 @@ import {
 } from "@/components/ui/select";
 import { proveedoresBuscar } from "@/app/services/proveedores";
 
-export default function page() {
-  const formRef: any = useRef();
-  const router = useRouter();
+const Page =() => {
+
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [proveedores, setProveedores] = useState([]);
@@ -32,6 +31,8 @@ export default function page() {
     idproveedor: "",
     estado: "",
   });
+  const formRef: any = useRef();
+  const router = useRouter();
 
   const fetchProveedores = async () => {
     const data = await proveedoresBuscar();
@@ -192,3 +193,5 @@ export default function page() {
     </>
   );
 }
+
+export default Page;

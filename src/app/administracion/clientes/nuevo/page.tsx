@@ -8,12 +8,9 @@ import { Title } from "@/components/Title";
 import { SuccessModal } from "@/components/SuccessModal";
 import { ErrorModal } from "@/components/ErrorModal";
 
-export default function page() {
-  const formRef: any = useRef();
-  const router = useRouter();
+const Page = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
-
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -21,7 +18,9 @@ export default function page() {
     telefono: "",
     email: "",
   });
-
+  
+  const formRef: any = useRef();
+  const router = useRouter();
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({
@@ -126,3 +125,5 @@ export default function page() {
     </>
   );
 }
+
+export default Page;

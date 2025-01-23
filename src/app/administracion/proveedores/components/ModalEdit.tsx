@@ -12,9 +12,7 @@ interface Props {
 }
 
 export const ModalEdit = ({ proveedor, show, onClose }: Props) => {
-  if (!show) return null;
 
-  const formRef: any = useRef([]);
   const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({
     idproveedor: proveedor[0].idproveedor || "",
@@ -25,6 +23,8 @@ export const ModalEdit = ({ proveedor, show, onClose }: Props) => {
     direccion: proveedor[0].direccion || "",
     localidad: proveedor[0].localidad || ""
   });
+  const formRef: any = useRef([]);
+  if (!show) return null;
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();

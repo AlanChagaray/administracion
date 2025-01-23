@@ -12,9 +12,9 @@ interface Props {
 
 
 export const ModalDelete = ({ idpedido, show, onClose }: Props) => {
-  if (!show) return null;
 
   const [message, setMessage] = useState(""); 
+  if (!show) return null;
 
   const IdPedido: number = idpedido;
 

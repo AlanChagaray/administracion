@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { clientesBuscar, clientesObtener } from "@/app/services/clientes";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -26,16 +26,16 @@ export default function Page() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
 
-  const fetchClientes = async () => {
+  const fetchClientes = useCallback( async () => {
     setLoading(true);
     const data = await clientesBuscar(searchParams);
     setClientes(data);
     setLoading(false);
-  };
+  },[searchParams]);
 
   useEffect(() => {
     fetchClientes();
-  }, [searchParams]);
+  }, [fetchClientes]);
 
   const handleCleanSearch = () => {
     setSearchParams({ nombre: '', apellido: '', telefono: '' });

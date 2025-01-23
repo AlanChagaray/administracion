@@ -18,16 +18,17 @@ async function usuario_obtener(id: any) {
   }
 }
 
-export default function page() {
-  const pathname = usePathname();
-  const id = pathname.split("/").pop();
-  const router = useRouter();
-  const formRef: any = useRef([]);
+const Page = () => {
+  
   const [pedido, setPedido] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [successModal, setSuccessModal] = useState(false);
   const [errorModal, setErrorModal] = useState(false);
+  const pathname = usePathname();
+  const id = pathname.split("/").pop();
+  const router = useRouter();
+  const formRef: any = useRef([]);
 
   useEffect(() => {
     async function fetchPedido() {
@@ -117,3 +118,5 @@ export default function page() {
     </div>
   );
 }
+
+export default Page;

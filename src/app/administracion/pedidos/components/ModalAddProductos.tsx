@@ -29,7 +29,6 @@ interface Props {
 }
 
 export const ModalAddProductos = ({ show, onClose, onConfirm }: Props) => {
-  if (!show) return null;
 
   const [productos, setProductos] = useState<Producto[]>([]);
   const [totalproductos, setTotalproductos] = useState<
@@ -51,6 +50,8 @@ export const ModalAddProductos = ({ show, onClose, onConfirm }: Props) => {
     };
     fetchproductos();
   }, [searchParams]);
+  
+  if (!show) return null;
 
   const handleChangeSearch = (value: string, field: string) => {
     setSearchParams({

@@ -27,7 +27,6 @@ interface Props {
 }
 
 export const ModalClientes = ({ show, onClose, onConfirm }: Props) => {
-  if (!show) return null;
 
   const [idcliente, setIdcliente] = useState(null);
   const [cliente, setCliente] = useState([]);
@@ -52,6 +51,8 @@ export const ModalClientes = ({ show, onClose, onConfirm }: Props) => {
     };
     fetchClientes();
   }, [searchParams]);
+
+  if (!show) return null;
 
   const handleChangeSearch = (value, field) => {
     setSearchParams({

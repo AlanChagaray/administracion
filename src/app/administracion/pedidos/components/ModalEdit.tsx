@@ -26,7 +26,6 @@ function formatDateToISO(dateString: string) {
 }
 
 export const ModalEdit = ({ pedido, show, onClose }: Props) => {
-  if (!show) return null;
 
   const formRef: any = useRef([]);
   const senia = pedido[0].senia;
@@ -43,9 +42,10 @@ export const ModalEdit = ({ pedido, show, onClose }: Props) => {
   });
 
   useEffect(() => {
-
     setPayChecked(senia === formData.total);
   }, [show, senia, formData.total]);
+
+  if (!show) return null;
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();

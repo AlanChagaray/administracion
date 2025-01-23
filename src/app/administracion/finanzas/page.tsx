@@ -58,7 +58,9 @@ export default function Page() {
                 </SelectTrigger>
                 <SelectContent>
                   {months.map((month) => (
-                  <SelectItem value={month.value}>{month.name}</SelectItem>
+                  <SelectItem key={month.value} value={month.value}>
+                    {month.name}
+                  </SelectItem>
                   ))}
                 </SelectContent>
               </Select>

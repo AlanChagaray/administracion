@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Title } from "@/components/Title";
 import { Button } from "@/components/Button";
 import { Subtitle } from "@/components/Subtitle";
 import axios from "axios";
@@ -23,9 +22,9 @@ async function deleteProducto(IdProducto: number) {
 }
 
 export const ModalDelete = ({ idproducto, show, onClose }: Props) => {
-  if (!show) return null;
 
   const [message, setMessage] = useState(""); 
+  if (!show) return null;
 
   const IdProducto: number = idproducto;
 

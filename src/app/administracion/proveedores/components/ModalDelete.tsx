@@ -23,9 +23,10 @@ async function deleteProducto(IdProveedor: number) {
 }
 
 export const ModalDelete = ({ idproveedor, show, onClose }: Props) => {
-  if (!show) return null;
 
   const [message, setMessage] = useState(""); 
+
+  if (!show) return null;
 
   const IdProveedor: number = idproveedor;
 

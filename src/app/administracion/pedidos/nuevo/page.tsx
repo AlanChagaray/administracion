@@ -7,12 +7,11 @@ import { Title } from "@/components/Title";
 import { SuccessModal } from "@/components/SuccessModal";
 import { ErrorModal } from "@/components/ErrorModal";
 import { Cliente } from "@/app/types/Cliente";
-import { Pedido } from "@/app/types/pedido";
+import { Pedido } from "@/app/types/Pedido";
 import { Producto } from "@/app/types/Producto";
 
-export default function page() {
-  const formRef: any = useRef();
-  const router = useRouter();
+const Page = () => {
+
   const [dataCliente, setDataCliente] = useState<Cliente>([]);
   const [dataProductos, setDataProductos] = useState<Producto[]>([]);
   const [dataPedido, setDataPedido] = useState<Pedido>([]);
@@ -20,7 +19,8 @@ export default function page() {
   const [currentStep, setCurrentStep] = useState(1);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
-
+  const formRef: any = useRef();
+  const router = useRouter();
 
   const handlePedidoConfirm = async (e: any) => {
     e.preventDefault();
@@ -142,3 +142,5 @@ export default function page() {
     </>
   );
 }
+
+export default Page;

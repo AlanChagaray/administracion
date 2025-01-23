@@ -13,7 +13,6 @@ interface Props {
 }
 
 export const ModalEdit = ({ cliente, show, onClose }: Props) => {
-  if (!show) return null;
 
   const formRef: any = useRef([]);
   const [message, setMessage] = useState(""); 
@@ -25,6 +24,8 @@ export const ModalEdit = ({ cliente, show, onClose }: Props) => {
     telefono: cliente[0].telefono || "",
     email: cliente[0].email || "",
   });
+
+  if (!show) return null;
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();

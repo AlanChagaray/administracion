@@ -21,7 +21,7 @@ export const AddPedido = ({ pedido, onPedido, onBackProductos }: any) => {
         descripcion: pedido.descripcion,
       });
     }
-  }, []);
+  }, [pedido]);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;

@@ -13,7 +13,6 @@ interface Props {
 }
 
 export const ModalView = ({ cliente, show, onClose }: Props) => {
-  if (!show) return null;
 
   const [pedidos, setPedidos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,6 +30,7 @@ export const ModalView = ({ cliente, show, onClose }: Props) => {
     fetchData();
   }, [cliente]);  
   
+  if (!show) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-40">

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { productosBuscar, productosObtener } from "@/app/services/productos";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -13,7 +13,7 @@ import { ModalDelete } from './components/ModalDelete';
 import { formatCurrency } from '@/utils/formatCurrency';
 
 
-export default function Page() {
+const Page = () => {
   const [idproducto, setIdproducto] = useState(null);
   const [producto, setproducto] = useState(null);
   const [productos, setproductos] = useState([]);
@@ -29,14 +29,14 @@ export default function Page() {
   
   useEffect(() => {
     fetchproductos();
-  }, [searchParams]);
+  }, [fetchproductos]);
 
-  const fetchproductos = async () => {
+  const fetchproductos = useCallback( async () => {
     setLoading(true);
     const data = await productosBuscar(searchParams);
     setproductos(data);
     setLoading(false);
-  };
+  }, [searchParams]);
 
   const handleCleanSearch = () => {
     setSearchParams({ nombre: '', apellido: '', telefono: '' });
@@ -220,3 +220,5 @@ export default function Page() {
     </>
   );
 }
+
+export default Page;

@@ -24,7 +24,7 @@ export const AddProductos = ({productos, onProductos, onBackCliente} : any ) => 
     if(productos){
       setTotalProductos(productos);
     }
-  }, [])
+  }, [productos])
   
 
   const handleOpenProductosModal = async () => {

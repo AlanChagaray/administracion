@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { pedidosBuscar, pedidosObtener } from "@/app/services/pedidos";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -11,7 +11,7 @@ import { ModalView , ModalEdit, ModalDelete } from './components/'
 import { formatCurrency } from '@/utils/formatCurrency';
 
 
-export default function Page() {
+const Page = () => {
   const [idpedido, setIdpedido] = useState(null);
   const [pedido, setPedido] = useState(null);
   const [pedidos, setPedidos] = useState([]);
@@ -22,17 +22,18 @@ export default function Page() {
   const [modalDeleteOpen, setModalDeleteOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(11); 
-
+  
   useEffect(() => {
     fetchPedidos();   
-  }, [searchParams]);
-  
-  const fetchPedidos = async () => {
+  }, [fetchPedidos]);
+
+  const fetchPedidos = useCallback( async () => {
     setLoading(true);
     const data = await pedidosBuscar(searchParams);
     setPedidos(data);
     setLoading(false);
-  };
+  }, [searchParams]);
+  
   const handleCleanSearch = () => {
     setSearchParams({  nombre: '',estado: ''});
   };
@@ -228,3 +229,5 @@ export default function Page() {
     </>
   );
 }
+
+export default Page;

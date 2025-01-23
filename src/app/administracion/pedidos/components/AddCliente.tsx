@@ -29,7 +29,7 @@ export const AddCliente = ({ cliente, onCliente }: any) => {
         email : cliente.email
       });
     }
-  }, []);
+  }, [cliente]);
   
 
   const handleSubmit = (e: any) => {

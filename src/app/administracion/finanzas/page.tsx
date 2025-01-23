@@ -72,7 +72,9 @@ export default function Page() {
                 </SelectTrigger>
                 <SelectContent>
                   {years.map((year) => (
-                  <SelectItem value={year}>{year}</SelectItem>
+                  <SelectItem key={year} value={year}>
+                    {year}
+                  </SelectItem>
                    ))}
                 </SelectContent>
               </Select>

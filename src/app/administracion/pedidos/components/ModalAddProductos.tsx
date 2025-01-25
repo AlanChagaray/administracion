@@ -1,5 +1,6 @@
+import React, { useEffect, useState } from "react";
 import { productosBuscar } from "@/app/services/productos";
-import { Producto } from "@/app/types";
+import { Producto } from "@/app/types/Producto";
 import { Button } from "@/components/Button";
 import { Spinner } from "@/components/Spinner";
 import { Subtitle } from "@/components/Subtitle";
@@ -20,7 +21,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { formatCurrency } from "@/utils/formatCurrency";
-import React, { useEffect, useState } from "react";
 
 interface Props {
   show: boolean;
@@ -214,8 +214,9 @@ export const ModalAddProductos = ({ show, onClose, onConfirm }: Props) => {
                     Total: {formatCurrency(total)}
                   </div>
                   <div className="flex justify-center mt-4">
-                    {[...Array(Math.ceil(productos.length / itemsPerPage )).keys()].map((number) => (
-                      <button
+                    {/* {[...Array(Math.ceil(productos.length / itemsPerPage )).keys()].map((number) => ( */}
+                    {Array.from({ length: Math.ceil(productos.length / itemsPerPage) }, (_, number) => (
+                    <button
                         key={number + 1}
                         onClick={() => paginate(number + 1)}
                         className={`px-3 py-1 mx-1 ${

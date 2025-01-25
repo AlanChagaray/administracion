@@ -5,7 +5,7 @@ import Producto from './model';
 export async function buscar(req : NextRequest) {
 
     const { searchParams } = new URL(req.url);
-    const idproducto : any = searchParams.get('idproducto') || null;
+    const idproducto = searchParams.get('idproducto') || null;
     const nombre = searchParams.get('nombre') || null;
     const descripcion = searchParams.get('descripcion') || null;
     const estado = searchParams.get('estado') || null;
@@ -14,7 +14,7 @@ export async function buscar(req : NextRequest) {
         const producto = await Producto.get(idproducto);
         return NextResponse.json(producto);
     }else{
-        const producto = await Producto.search({ idproducto, nombre, descripcion, estado });
+        const producto = await Producto.search({ nombre, descripcion, estado });
         return NextResponse.json(producto);
     }
 

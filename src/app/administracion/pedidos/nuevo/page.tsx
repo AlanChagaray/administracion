@@ -12,9 +12,9 @@ import { Producto } from "@/app/types/Producto";
 
 const Page = () => {
 
-  const [dataCliente, setDataCliente] = useState<Cliente>([]);
+  const [dataCliente, setDataCliente] = useState<Cliente | null>(null);
   const [dataProductos, setDataProductos] = useState<Producto[]>([]);
-  const [dataPedido, setDataPedido] = useState<Pedido>([]);
+  const [dataPedido, setDataPedido] = useState<Pedido | null>(null);
   const [totalProductos, setTotalProductos] = useState({});
   const [currentStep, setCurrentStep] = useState(1);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -22,10 +22,12 @@ const Page = () => {
   const formRef: any = useRef();
   const router = useRouter();
 
-  const handlePedidoConfirm = async (e: any) => {
-    e.preventDefault();
+  const handlePedidoConfirm = async () => {
     try {
-      
+      if (!dataCliente) {
+        throw new Error('Cliente no seleccionado');
+      }
+
       let idcliente = dataCliente.idcliente;
 
       if (!idcliente) {
@@ -39,6 +41,10 @@ const Page = () => {
         idcliente = clienteResponse.data.idcliente; 
       }
       
+      if (!dataPedido) {
+        throw new Error('Pedido no seleccionado');
+      }
+
      const pedidoResponse = await axios.post("/api/pedidos", {
         idcliente: idcliente,
         fecharetiro: dataPedido.fecharetiro,

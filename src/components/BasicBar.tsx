@@ -3,8 +3,12 @@ import React from "react";
 import ReactECharts from "echarts-for-react";
 import { formatCurrency } from "@/utils/formatCurrency";
 
+interface Props {
+  mes: number;
+  total: number;
+}
 
-export const BasicBar = ({ data }) => {
+export const BasicBar = ({ data } : { data : Props[]}) => {
   // Array con los nombres de los meses
   const monthNames = [
     "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
@@ -47,7 +51,7 @@ export const BasicBar = ({ data }) => {
     yAxis: {
       type: 'value',
       axisLabel: {
-        formatter: function (value) {
+        formatter: function (value : any) {
           return formatCurrency(value);
         }
       }

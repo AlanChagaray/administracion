@@ -1,24 +1,11 @@
+import React, { useEffect, useState } from "react";
 import { clientesBuscar, clientesObtener } from "@/app/services/clientes";
 import { Button } from "@/components/Button";
 import { Spinner } from "@/components/Spinner";
 import { Subtitle } from "@/components/Subtitle";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-
-import React, { useEffect, useState } from "react";
+import { Select,SelectTrigger,SelectContent,SelectItem,SelectValue} from "@/components/ui/select";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
+import { Cliente } from "@/app/types/Cliente";
 
 interface Props {
   show: boolean;
@@ -29,8 +16,8 @@ interface Props {
 export const ModalClientes = ({ show, onClose, onConfirm }: Props) => {
 
   const [idcliente, setIdcliente] = useState(null);
-  const [cliente, setCliente] = useState([]);
-  const [clientes, setClientes] = useState([]);
+  const [cliente, setCliente] = useState<Cliente[]>([]);
+  const [clientes, setClientes] = useState<Cliente[]>([]);
   const [loading, setLoading] = useState(true);
   const [showButton, setShowButton] = useState(false);
   const [searchParams, setSearchParams] = useState({
@@ -54,7 +41,7 @@ export const ModalClientes = ({ show, onClose, onConfirm }: Props) => {
 
   if (!show) return null;
 
-  const handleChangeSearch = (value, field) => {
+  const handleChangeSearch = (value : any, field : any) => {
     setSearchParams({
       ...searchParams,
       [field]: value,
@@ -89,7 +76,7 @@ export const ModalClientes = ({ show, onClose, onConfirm }: Props) => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = clientes.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber : any) => setCurrentPage(pageNumber);
 
   return (
     <>
@@ -208,11 +195,7 @@ export const ModalClientes = ({ show, onClose, onConfirm }: Props) => {
                     </TableBody>
                   </Table>
                   <div className="flex justify-center mt-4">
-                    {[
-                      ...Array(
-                        Math.ceil(clientes.length / itemsPerPage)
-                      ).keys(),
-                    ].map((number) => (
+                  {Array.from({ length: Math.ceil(clientes.length / itemsPerPage) }, (_, number) => (
                       <button
                         key={number + 1}
                         onClick={() => paginate(number + 1)}

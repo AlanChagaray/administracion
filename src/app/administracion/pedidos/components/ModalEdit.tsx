@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Title } from "@/components/Title";
-import { Pedido } from "@/app/types/pedido";
+import { Pedido } from "@/app/types/Pedido";
 
 interface Props {
   pedido: Pedido[];

@@ -50,7 +50,7 @@ export default class Finanza {
     return rows;
   }
 
-  static async getYear(anio: number) {
+  static async getYear(anio: number | null) {
     const sql = `SELECT 
     generate_series AS mes,
     COALESCE($1, EXTRACT(YEAR FROM CURRENT_DATE)) AS anio,

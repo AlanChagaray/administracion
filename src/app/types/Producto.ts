@@ -4,5 +4,5 @@ export interface Producto {
     cantidad: number;
     totalproducto : string;
     descripcion : string;
-    precioventa : string;
+    precioventa : number;
   }

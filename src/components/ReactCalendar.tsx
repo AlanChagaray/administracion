@@ -15,18 +15,7 @@ import {
 } from "@/components/ui/table";
 import { Subtitle } from "./Subtitle";
 import { formatCurrency } from "@/utils/formatCurrency";
-
-interface Pedido {
-  idpedido: number;
-  nombre: string;
-  descripcion: string;
-  fecharetiro: string;
-  senia: number;
-  restante: number;
-  total: number;
-  estado: string;
-  activo: boolean;
-}
+import { Pedido } from "@/app/types/Pedido";
 
 interface Props {
   pedidos: Pedido[];

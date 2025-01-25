@@ -5,6 +5,7 @@ import { pedidosBuscar } from "@/app/services/pedidos";
 import { Spinner } from "@/components/Spinner";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { formatCurrency } from "@/utils/formatCurrency";
+import { Pedido } from "@/app/types/Pedido";
 
 interface Props {
   cliente: any;
@@ -14,7 +15,7 @@ interface Props {
 
 export const ModalView = ({ cliente, show, onClose }: Props) => {
 
-  const [pedidos, setPedidos] = useState([]);
+  const [pedidos, setPedidos] = useState<Pedido[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

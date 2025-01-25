@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { finanzasBuscar, finanzasObtener } from "@/app/services/finanzas";
 import { Title } from "@/components/Title";
 import { BasicLineChart } from "@/components/BasicLineChart";
-import { Subtitle } from "@/components/Subtitle";
 import { Spinner } from "@/components/Spinner";
 import { SpinnerSmall } from "@/components/SpinnerSmall";
 import { BasicBar } from "@/components/BasicBar";

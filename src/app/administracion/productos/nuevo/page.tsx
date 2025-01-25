@@ -15,19 +15,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { proveedoresBuscar } from "@/app/services/proveedores";
+import { Proveedor } from "@/app/types/Proveedor";
 
 const Page =() => {
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
-  const [proveedores, setProveedores] = useState([]);
+  const [proveedores, setProveedores] = useState<Proveedor[]>([]);
 
   const [formData, setFormData] = useState({
     nombre: "",
     descripcion: "",
     preciocompra: "",
     precioventa: "",
-    descuento: "" | null,
+    descuento: "",
     idproveedor: "",
     estado: "",
   });

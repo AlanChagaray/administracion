@@ -7,8 +7,8 @@ export interface Pedido {
     fechaalta?: string;
     fechamodificacion?: string;
     estado?: string;
-    senia : string;
-    total : string;
+    senia : number;
+    total : number;
     descripcion?: string;
   }
   

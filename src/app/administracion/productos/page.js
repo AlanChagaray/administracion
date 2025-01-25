@@ -1,19 +1,19 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
 import { productosBuscar, productosObtener } from "@/app/services/productos";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/Button';
 import { Spinner } from '@/components/Spinner';
-import { IoEyeOutline, IoCreateOutline, IoTrashOutline } from 'react-icons/io5';
 import { Title } from '@/components/Title';
 import { ModalEdit } from './components/ModalEdit';
 import { ModalView } from './components/ModalView';
 import { ModalDelete } from './components/ModalDelete';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { IoEyeOutline, IoCreateOutline, IoTrashOutline } from 'react-icons/io5';
 import { formatCurrency } from '@/utils/formatCurrency';
 
 
-const Page = () => {
+export default function Page () {
   const [idproducto, setIdproducto] = useState(null);
   const [producto, setproducto] = useState(null);
   const [productos, setproductos] = useState([]);
@@ -220,5 +220,3 @@ const Page = () => {
     </>
   );
 }
-
-export default Page;

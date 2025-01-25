@@ -1,17 +1,17 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
 import { pedidosBuscar, pedidosObtener } from "@/app/services/pedidos";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { ModalView , ModalEdit, ModalDelete } from './components/'
 import { Button } from '@/components/Button';
 import { Spinner } from '@/components/Spinner';
-import { IoEyeOutline, IoCreateOutline, IoTrashOutline } from 'react-icons/io5';
 import { Title } from '@/components/Title';
-import { ModalView , ModalEdit, ModalDelete } from './components/'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { IoEyeOutline, IoCreateOutline, IoTrashOutline } from 'react-icons/io5';
 import { formatCurrency } from '@/utils/formatCurrency';
 
 
-const Page = () => {
+export default function Page (){
   const [idpedido, setIdpedido] = useState(null);
   const [pedido, setPedido] = useState(null);
   const [pedidos, setPedidos] = useState([]);
@@ -229,5 +229,3 @@ const Page = () => {
     </>
   );
 }
-
-export default Page;

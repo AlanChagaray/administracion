@@ -1,19 +1,25 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { finanzasBuscar, finanzasObtener } from "@/app/services/finanzas";
+import { finanzasObtener } from "@/app/services/finanzas";
 import { Title } from "@/components/Title";
-import { BasicLineChart } from "@/components/BasicLineChart";
 import { Spinner } from "@/components/Spinner";
 import { SpinnerSmall } from "@/components/SpinnerSmall";
-import { BasicBar } from "@/components/BasicBar";
 import {Card,CardDescription,CardHeader,CardTitle} from "@/components/ui/card";
 import {Select,SelectContent,SelectItem,SelectTrigger,SelectValue} from "@/components/ui/select";
 import { formatCurrency } from "@/utils/formatCurrency";
 import { months, years } from "@/utils/dateOptions";  
-import { Pie } from "@/components/Pie";
+
+// import { BasicLineChart } from "@/components/BasicLineChart";
+// import { BasicBar } from "@/components/BasicBar";
+// import Pie  from "@/components/Pie";
+import dynamic from 'next/dynamic';
+
+const BasicLineChart = dynamic(() => import('@/components/BasicLineChart'), { ssr: false });
+const Pie = dynamic(() => import('@/components/Pie'), { ssr: false });
+const BasicBar = dynamic(() => import('@/components/BasicBar'), { ssr: false });
 
 
-export default function Page() {
+const Page = ()=> {
   const [finanzas, setFinanzas] = useState([]);
   const [dataBasicLineChart, setDataBasicLineChart] = useState([]);
   const [dataBasicBar, setDataBasicBar] = useState([]);
@@ -43,6 +49,10 @@ export default function Page() {
 
   const handleYearChange = (value) => {
     setAnio(value);
+  }
+
+  if (loading) {
+    return <Spinner />;
   }
 
   return (
@@ -174,3 +184,5 @@ export default function Page() {
     </>
   );
 }
+
+export default Page;

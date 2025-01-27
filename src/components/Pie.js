@@ -1,9 +1,15 @@
 'use client';
 import React from "react";
 import ReactECharts from "echarts-for-react";
-import { total } from '../utils/formatCurrency';
 
-export const Pie = ({ data = [] }) => {
+const Pie = ({ data = [] }) => {
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const pieData = data.map(item => ({
     value: parseInt(item.total_cantidad, 10), 
     name: item.nombre
@@ -37,6 +43,10 @@ export const Pie = ({ data = [] }) => {
       }
     ]
   };
-
+  if (!isClient) {
+    return null;
+  }
   return <ReactECharts option={option} />;
 };
+
+export default Pie;

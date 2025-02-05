@@ -23,16 +23,17 @@ export default function Page (){
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(11); 
   
-  useEffect(() => {
-    fetchPedidos();   
-  }, [fetchPedidos]);
-
   const fetchPedidos = useCallback( async () => {
     setLoading(true);
     const data = await pedidosBuscar(searchParams);
     setPedidos(data);
     setLoading(false);
   }, [searchParams]);
+  
+  useEffect(() => {
+    fetchPedidos();   
+  }, [fetchPedidos]);
+
   
   const handleCleanSearch = () => {
     setSearchParams({  nombre: '',estado: ''});

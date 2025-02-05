@@ -40,7 +40,7 @@ export default function Page() {
       <Card className="sm:w-[50%] lg:w-[20%] rounded-md">
         <CardHeader>
           <CardTitle className="flex justify-center items-center text-center">
-            Sistema de administración TEST
+            Sistema de administración
           </CardTitle>
         </CardHeader>
         <CardContent className="mt-5">

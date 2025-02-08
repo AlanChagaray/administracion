@@ -39,7 +39,7 @@ export const ModalEdit = ({ producto, show, onClose }: Props) => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await axios.put("/api/productos", formData);
+      const response = await axios.put(process.env.NEXT_PUBLIC_API_URL +"/productos", formData);
       setMessage("Producto editado exitosamente.");
       formRef.current.reset();
     } catch (error) {

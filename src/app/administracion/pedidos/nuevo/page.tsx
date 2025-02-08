@@ -31,7 +31,7 @@ const Page = () => {
       let idcliente = dataCliente.idcliente;
 
       if (!idcliente) {
-        const clienteResponse = await axios.post("/api/clientes", {
+        const clienteResponse = await axios.post("/clientes", {
           nombre: dataCliente.nombre,
           apellido: dataCliente.apellido,
           documento: dataCliente.documento,
@@ -45,7 +45,7 @@ const Page = () => {
         throw new Error('Pedido no seleccionado');
       }
 
-     const pedidoResponse = await axios.post("/api/pedidos", {
+     const pedidoResponse = await axios.post(process.env.NEXT_PUBLIC_API_URL +"/pedidos", {
         idcliente: idcliente,
         fecharetiro: dataPedido.fecharetiro,
         senia: dataPedido.senia,
@@ -56,7 +56,7 @@ const Page = () => {
 
       if (dataProductos && idpedido) {
         for (const prod of dataProductos) {
-          await axios.post("/api/vtaproductos", {
+          await axios.post("/vtaproductos", {
             idpedido: idpedido,
             idproducto: prod.idproducto,
             cantidad: prod.cantidad,

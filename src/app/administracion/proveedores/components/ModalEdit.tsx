@@ -29,7 +29,7 @@ export const ModalEdit = ({ proveedor, show, onClose }: Props) => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await axios.put("/api/proveedores", formData);
+      const response = await axios.put(process.env.NEXT_PUBLIC_API_URL +"/proveedores", formData);
       setMessage("Proveedor editado exitosamente.");
       formRef.current.reset();
     } catch (error) {

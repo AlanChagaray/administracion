@@ -30,7 +30,7 @@ export const ModalEdit = ({ cliente, show, onClose }: Props) => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await axios.put("/api/clientes", formData);
+      const response = await axios.put(process.env.NEXT_PUBLIC_API_URL +"/clientes", formData);
       setMessage("Cliente editado correctamente.");
       formRef.current.reset();
     } catch (error) {

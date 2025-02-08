@@ -31,7 +31,7 @@ const Page = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/proveedores", formData);
+      const response = await axios.post(process.env.NEXT_PUBLIC_API_URL +"/proveedores", formData);
       setShowSuccessModal(true);
       formRef.current.reset();
     } catch (error) {

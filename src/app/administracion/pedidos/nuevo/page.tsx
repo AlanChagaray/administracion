@@ -31,7 +31,7 @@ const Page = () => {
       let idcliente = dataCliente.idcliente;
 
       if (!idcliente) {
-        const clienteResponse = await axios.post("/clientes", {
+        const clienteResponse = await axios.post(process.env.NEXT_PUBLIC_API_URL +"/clientes", {
           nombre: dataCliente.nombre,
           apellido: dataCliente.apellido,
           documento: dataCliente.documento,
@@ -56,7 +56,7 @@ const Page = () => {
 
       if (dataProductos && idpedido) {
         for (const prod of dataProductos) {
-          await axios.post("/vtaproductos", {
+          await axios.post(process.env.NEXT_PUBLIC_API_URL +"/vtaproductos", {
             idpedido: idpedido,
             idproducto: prod.idproducto,
             cantidad: prod.cantidad,

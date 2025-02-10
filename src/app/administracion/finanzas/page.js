@@ -9,14 +9,14 @@ import {Select,SelectContent,SelectItem,SelectTrigger,SelectValue} from "@/compo
 import { formatCurrency } from "@/utils/formatCurrency";
 import { months, years } from "@/utils/dateOptions";  
 
-import { BasicLineChart } from "@/components/BasicLineChart";
-import { BasicBar } from "@/components/BasicBar";
-import Pie  from "@/components/Pie";
-// import dynamic from 'next/dynamic';
+// import { BasicLineChart } from "@/components/BasicLineChart";
+// import { BasicBar } from "@/components/BasicBar";
+// import Pie  from "@/components/Pie";
+import dynamic from 'next/dynamic';
 
-// const BasicLineChart = dynamic(() => import('@/components/BasicLineChart'), { ssr: false });
-// const Pie = dynamic(() => import('@/components/Pie'), { ssr: false });
-// const BasicBar = dynamic(() => import('@/components/BasicBar'), { ssr: false });
+const BasicLineChart = dynamic(() => import('@/components/BasicLineChart'), { ssr: false });
+const Pie = dynamic(() => import('@/components/Pie'), { ssr: false });
+const BasicBar = dynamic(() => import('@/components/BasicBar'), { ssr: false });
 
 
 const Page = ()=> {

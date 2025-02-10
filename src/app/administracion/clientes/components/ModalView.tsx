@@ -36,7 +36,7 @@ export const ModalView = ({ cliente, show, onClose }: Props) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-40">
       <div className="fixed inset-0 flex items-center justify-center z-50 ">
-        <div className="bg-white  rounded-md p-4 w-[50%]">
+        <div className="bg-white  rounded-md p-4 lg:w-[50%]">
           {cliente.map((c: any) => (
             <div key={c.idcliente}>
               <Title value={c.nombre + " " + c.apellido} />

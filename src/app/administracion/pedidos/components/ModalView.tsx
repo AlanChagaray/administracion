@@ -48,7 +48,7 @@ export const ModalView = ({ pedido, show, onClose }: Props) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-40">
     <div className="fixed inset-0 flex items-center justify-center z-50 ">
-    <div className="bg-white  rounded-md p-4 w-[50%]">
+    <div className="bg-white  rounded-md p-4 lg:w-[50%]">
     <div className='flex justify-center mb-3'>
           <Title value='Detalle pedido' />
           </div>
@@ -102,7 +102,7 @@ export const ModalView = ({ pedido, show, onClose }: Props) => {
                             <TableCell>{prod.nombre}</TableCell>
                             <TableCell>{prod.cantidad}</TableCell>
                             <TableCell>{ formatCurrency(prod.precioventa)}</TableCell>
-                            <TableCell>{ formatCurrency(prod.totalproducto)}</TableCell>
+                            <TableCell>{ formatCurrency(prod.precioventa * prod.cantidad)}</TableCell>
                           </TableRow>
                         ))}
                         <TableRow>

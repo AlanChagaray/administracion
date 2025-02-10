@@ -49,7 +49,7 @@ export const AddProductos = ({productos, onProductos, onBackCliente} : any ) => 
 
   return (
     <div className="justify-center flex">
-    <div className="w-full max-w-[80%] ">
+    <div className="w-full lg:max-w-[80%] sm:max-w-[100%]">
       <form onSubmit={handleSubmit} ref={formRef}>
         <div className="shadow-md bg-white p-4 ">
         <div className="flex justify-start">

@@ -40,7 +40,7 @@ export default function Page() {
   return (
     <div >
       <div>
-        <ul className="flex space-x-3 mt-2 justify-center">
+        <ul className="lg:flex justify-center mt-2">
         {/* <ul className="lg:flex sm:flex lg:space-x-3 lg:mt-2 justify-center  sm:space-y-4"> */}
           <li className="sm:flex">
             <Card className="lg:w-44 sm:full justify-center flex  bg-green-400 hover:bg-green-500">
@@ -56,7 +56,7 @@ export default function Page() {
               </Link>
             </Card>
           </li>
-          <li className="sm:flex">
+          <li>
             <Card className="lg:w-44 sm:full justify-center flex bg-blue-400 hover:bg-blue-500">
               <Link href={'administracion/clientes/nuevo'}>
                 <CardHeader>
@@ -132,7 +132,7 @@ export default function Page() {
       </div>
       <div className='mt-5'>
         {/* <div className='lg:grid lg:grid-cols-2 lg:space-x-3 sm:grid sm:grid-rows-2 sm:space-y-3'> */}
-        <div className='grid grid-cols-2 space-x-3'>
+        <div className='lg:grid grid-cols-2 space-x-3'>
           <div >
             <Subtitle value='Pedidos recientes' />
             {loading ? (

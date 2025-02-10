@@ -21,7 +21,7 @@ export const PreviewPedido = ({ cliente, productos, pedido, total, onConfirm, on
   return (
     <>
       <div className="flex justify-center">
-        <div className="w-[80%] shadow-md bg-white p-4">
+        <div className="lg:w-[80%] shadow-md bg-white p-4">
           <div>
             <div className="flex justify-start">
               <button onClick={onBackPedidos} className="flex items-center text-gray-500">

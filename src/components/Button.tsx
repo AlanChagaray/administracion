@@ -24,7 +24,7 @@ export const Button = ({ type, value, url, onClick }: Props) => {
         return <button className='bg-red-400 hover:bg-red-500 hover: text-white h-8 px-3 py-2 flex items-center justify-center rounded-md' onClick={onClick}>{value ? value : 'Limpiar'}</button>;
       case 'add':
         return <button  className='bg-green-400 hover:bg-green-500 text-white h-8 px-3 py-2 flex items-center justify-center rounded-md' onClick={onClick}>
-                    <Link className="flex items-center space-x-3" href={_url}><IoAddOutline size={15}  color='white' />{value ? value : 'Ingresar nuevo'}</Link>
+                    <Link className="flex items-center space-x-3" href={_url}><IoAddOutline size={15}  color='white' />{value ? value : 'Nuevo'}</Link>
                 </button>;
       case 'success':
         return <button className='bg-green-400 hover:bg-green-500 text-white h-8 px-3 py-2 flex items-center justify-center rounded-md' onClick={onClick}>{value ? value : 'Confirmar'}</button>;

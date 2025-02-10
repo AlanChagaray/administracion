@@ -40,7 +40,7 @@ export const AddPedido = ({ pedido, onPedido, onBackProductos }: any) => {
   return (
     <>
       <div className="flex justify-center">
-        <div className="w-[80%] shadow-md bg-white p-4 ">
+        <div className="lg:w-[80%] shadow-md bg-white p-4">
           <div className="flex justify-start">
             <button
               onClick={onBackProductos}

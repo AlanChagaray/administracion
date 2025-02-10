@@ -9,14 +9,14 @@ import {Select,SelectContent,SelectItem,SelectTrigger,SelectValue} from "@/compo
 import { formatCurrency } from "@/utils/formatCurrency";
 import { months, years } from "@/utils/dateOptions";  
 
-// import { BasicLineChart } from "@/components/BasicLineChart";
-// import { BasicBar } from "@/components/BasicBar";
-// import Pie  from "@/components/Pie";
-import dynamic from 'next/dynamic';
+import { BasicLineChart } from "@/components/BasicLineChart";
+import { BasicBar } from "@/components/BasicBar";
+import Pie  from "@/components/Pie";
+// import dynamic from 'next/dynamic';
 
-const BasicLineChart = dynamic(() => import('@/components/BasicLineChart'), { ssr: false });
-const Pie = dynamic(() => import('@/components/Pie'), { ssr: false });
-const BasicBar = dynamic(() => import('@/components/BasicBar'), { ssr: false });
+// const BasicLineChart = dynamic(() => import('@/components/BasicLineChart'), { ssr: false });
+// const Pie = dynamic(() => import('@/components/Pie'), { ssr: false });
+// const BasicBar = dynamic(() => import('@/components/BasicBar'), { ssr: false });
 
 
 const Page = ()=> {
@@ -91,7 +91,7 @@ const Page = ()=> {
           </ul>
         </div>
         <div>
-          <ul className="flex space-x-3 mt-2">
+          <ul className="lg:flex space-x-3 mt-2">
             <li>
               <Card className="w-36 rounded-md">
                 <CardHeader>
@@ -168,7 +168,7 @@ const Page = ()=> {
         <hr></hr>
         </div>
       <div className="mt-3">
-        <div className="grid grid-cols-2">
+        <div className="lg:grid grid-cols-2">
           <div> <BasicLineChart data={dataBasicLineChart} /></div>
         <div>
           <Pie data={dataPieProducts}/>

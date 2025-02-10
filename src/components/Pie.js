@@ -2,7 +2,7 @@
 import React , { useState , useEffect} from "react";
 import ReactECharts from "echarts-for-react";
 
-const Pie = ({ data = [] }) => {
+export const Pie = ({ data = [] }) => {
 
   const [isClient, setIsClient] = useState(false);
 
@@ -48,5 +48,3 @@ const Pie = ({ data = [] }) => {
   }
   return <ReactECharts option={option} />;
 };
-
-export default Pie;

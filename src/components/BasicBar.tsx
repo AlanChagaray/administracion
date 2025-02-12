@@ -8,7 +8,7 @@ interface Props {
   total: number;
 }
 
-export const BasicBar = ({ data } : { data : Props[]}) => {
+export default function BasicBar ({ data } : { data : Props[]}) {
   // Array con los nombres de los meses
   const monthNames = [
     "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 

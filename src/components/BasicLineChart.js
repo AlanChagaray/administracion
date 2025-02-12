@@ -3,7 +3,7 @@ import React from "react";
 import ReactECharts from "echarts-for-react";
 import { formatCurrency } from "@/utils/formatCurrency";
 
-export const BasicLineChart = ({ data }) => {
+export default function BasicLineChart ({ data }) {
 
   // Extraer fechas y totales de los pedidos
   const fechas = data.map(index => index.fecharetiro);

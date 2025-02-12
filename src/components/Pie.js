@@ -2,7 +2,7 @@
 import React , { useState , useEffect} from "react";
 import ReactECharts from "echarts-for-react";
 
-export const Pie = ({ data = [] }) => {
+export default function Pie ({ data = [] }){
 
   const [isClient, setIsClient] = useState(false);
 

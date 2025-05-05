@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { Title } from "@/components/Title";
+import { useState } from "react";
+import axios from "axios";
 import { Button } from "@/components/Button";
 import { Subtitle } from "@/components/Subtitle";
-import axios from "axios";
 
 interface Props {
   idcliente: number;

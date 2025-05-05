@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { AddCliente, AddProductos , AddPedido, PreviewPedido } from "../components/"

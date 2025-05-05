@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { clientesObtener } from '@/app/services/clientes'
 import { Button } from '@/components/Button'
 import { Title } from '@/components/Title'

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { clientesBuscar, clientesObtener } from "@/app/services/clientes";
 import { Button } from "@/components/Button";
 import { Spinner } from "@/components/Spinner";

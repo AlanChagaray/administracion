@@ -1,14 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import { formatCurrency } from "../../../../utils/formatCurrency";
-import {
-  Table,
-  TableHead,
-  TableHeader,
-  TableRow,
-  TableBody,
-  TableCell,
-} from "@/components/ui/table";
+import { Table, TableHead, TableHeader, TableRow, TableBody, TableCell } from "@/components/ui/table";
 import { ModalAddProductos } from "./ModalAddProductos";
 import { Button } from "@/components/Button";
 import { Title } from "@/components/Title";

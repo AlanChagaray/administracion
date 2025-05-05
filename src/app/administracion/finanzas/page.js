@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { finanzasObtener } from "@/app/services/finanzas";
 import { Title } from "@/components/Title";
 import { Spinner } from "@/components/Spinner";

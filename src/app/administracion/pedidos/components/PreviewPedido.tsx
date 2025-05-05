@@ -1,10 +1,9 @@
-import React from "react";
 import { Title } from "@/components/Title";
 import { Label } from "@/components/ui/label";
 import { Table, TableHead, TableHeader, TableRow, TableBody, TableCell } from "@/components/ui/table";
 import { Button } from "@/components/Button";
 import { IoArrowBackOutline } from "react-icons/io5";
-import { formatCurrency, total } from "@/utils/formatCurrency";
+import { formatCurrency } from "@/utils/formatCurrency";
 import { Producto } from "@/app/types/Producto";
 
 interface Props {

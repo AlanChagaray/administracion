@@ -1,8 +1,8 @@
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/Button";
 import { Title } from "@/components/Title";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import React, { useEffect, useRef, useState } from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
 
 export const AddPedido = ({ pedido, onPedido, onBackProductos }: any) => {

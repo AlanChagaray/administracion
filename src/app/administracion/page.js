@@ -1,16 +1,15 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ReactCalendar } from "@/components/ReactCalendar";
-import { Title } from "@/components/Title";
 import { Spinner } from "@/components/Spinner";
 import { SpinnerSmall } from "@/components/SpinnerSmall";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import dayjs from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { IoCartOutline, IoPeopleOutline } from "react-icons/io5";
-import Link from "next/link";
 import { clientesBuscar } from "../services/clientes";
 import { pedidosBuscar } from "../services/pedidos";
 import { Subtitle } from "@/components/Subtitle";
@@ -18,7 +17,6 @@ import { Subtitle } from "@/components/Subtitle";
 dayjs.extend(advancedFormat);
 
 export default function Page() {
-  const [openModal, setOpenModal] = useState(false);
   const [pedidos, setPedidos] = useState([]);
   const [clientes, setClientes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -41,7 +39,6 @@ export default function Page() {
     <div >
       <div>
         <ul className="lg:flex justify-center mt-2">
-        {/* <ul className="lg:flex sm:flex lg:space-x-3 lg:mt-2 justify-center  sm:space-y-4"> */}
           <li className="sm:flex">
             <Card className="lg:w-44 sm:full justify-center flex  bg-green-400 hover:bg-green-500">
               <Link href={'administracion/pedidos/nuevo'}>
@@ -131,7 +128,6 @@ export default function Page() {
         <hr></hr>
       </div>
       <div className='mt-5'>
-        {/* <div className='lg:grid lg:grid-cols-2 lg:space-x-3 sm:grid sm:grid-rows-2 sm:space-y-3'> */}
         <div className='lg:grid grid-cols-2 space-x-3'>
           <div >
             <Subtitle value='Pedidos recientes' />

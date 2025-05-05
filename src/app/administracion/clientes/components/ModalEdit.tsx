@@ -1,7 +1,6 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import axios from "axios";
-import { usePathname, useRouter } from "next/navigation";
 import { Title } from "@/components/Title";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/ui/input";

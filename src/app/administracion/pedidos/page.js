@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { pedidosBuscar, pedidosObtener } from "@/app/services/pedidos";
 import { ModalView , ModalEdit, ModalDelete } from './components/'
 import { Button } from '@/components/Button';

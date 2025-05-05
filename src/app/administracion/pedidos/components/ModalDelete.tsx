@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { pedidosEliminar } from "@/app/services/pedidos";
 import { Button } from "@/components/Button";
 import { Subtitle } from "@/components/Subtitle";
